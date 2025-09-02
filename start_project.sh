@@ -25,38 +25,41 @@ python3 -m venv "${PROJECT_NAME}/backend/venv" || {
 }
 
 # Create README.md
-cat > "${PROJECT_NAME}/README.md" << 'README'
-## Backend
+{
+echo "## Backend"
+echo
+echo "Activate environment"
+echo
+echo '```bash'
+echo "cd \"${PROJECT_NAME}/backend\""
+echo 'source "venv/bin/activate"'
+echo '```'
+echo
+echo "Deactivate environment"
+echo
+echo '```bash'
+echo "cd \"${PROJECT_NAME}/backend\""
+echo 'deactivate'
+echo '```'
+echo
+echo "## Frontend"
+echo
+echo "Install dependencies"
+echo
+echo '```bash'
+echo "cd \"${PROJECT_NAME}/frontend\""
+echo 'npm install'
+echo '```'
+echo
+echo "Run frontend"
+echo
+echo '```bash'
+echo "cd \"${PROJECT_NAME}/frontend\""
+echo 'npm start'
+echo '```'
+echo
+} > "${PROJECT_NAME}/README.md"
 
-Activate environment
-
-```bash
-cd "${PROJECT_NAME}/backend"
-source "venv/bin/activate"
-```
-
-Deactivate environment
-
-```bash
-cd "${PROJECT_NAME}/backend"
-deactivate
-```
-
-## Frontend
-
-Install dependencies
-
-```bash
-cd "${PROJECT_NAME}/frontend"
-npm install
-```
-
-Run frontend
-
-```bash
-npm start
-```
-README
 
 # Create requirements.txt for the backend before installing
 cat > "${PROJECT_NAME}/backend/requirements.txt" << 'REQUIREMENTS'
